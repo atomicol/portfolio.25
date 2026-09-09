@@ -86,21 +86,6 @@ export default function ProjectsPage() {
         )}
       </div>
 
-      <div className="mt-12 w-full rounded-lg bg-accent p-6 border border-border">
-        <h3 className="text-lg font-semibold mb-2">
-          Interested in collaborating?
-        </h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          I&apos;m always open to interesting projects and ideas. Feel free to
-          reach out!
-        </p>
-        <Link
-          href={`mailto:${personalInfo.contact.email}`}
-          className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-        >
-          Get in touch →
-        </Link>
-      </div>
     </div>
   );
 }

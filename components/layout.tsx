@@ -7,6 +7,7 @@ import { SunIcon, MoonIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import { Footer } from "@/components/footer";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -26,7 +27,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Hide navbar when scrolling down past 100px, show when scrolling up
       if (currentScrollY > lastY && currentScrollY > 100) {
         setIsScrollingDown(true);
       } else if (currentScrollY < lastY) {
@@ -36,33 +36,35 @@ export function Layout({ children }: { children: React.ReactNode }) {
       lastY = currentScrollY;
     };
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <header
         className={cn(
-          "sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 navbar",
+          "navbar sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70",
           isScrollingDown && "navbar-hidden",
         )}
       >
-        <div className="w-full px-4 md:px-8 py-1 md:py-2">
-          <div className="mx-auto max-w-2xl flex h-12 items-center justify-between">
-            <nav className="hidden md:flex items-center gap-6">
+        <div className="mx-auto w-full max-w-2xl px-3 sm:px-4 md:px-0">
+          <div className="flex h-14 items-center justify-between sm:h-16">
+            <nav className="hidden items-center gap-1 rounded-xl border border-border/70 bg-muted/40 p-1 md:flex">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "relative text-base font-medium transition-colors hover:text-foreground pb-1",
+                    "rounded-lg px-4 py-2 text-sm font-medium transition-all",
                     pathname === item.href
-                      ? "text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground"
-                      : "text-muted-foreground",
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:bg-background/60 hover:text-foreground",
                   )}
                 >
                   {item.name}
@@ -74,39 +76,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="h-10 w-10 rounded-lg md:hidden"
+              className="h-11 w-11 rounded-xl border border-border/70 md:hidden"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+              aria-label="Toggle navigation menu"
             >
               <HamburgerMenuIcon className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
             </Button>
 
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="h-10 w-10 rounded-lg"
+              className="h-11 w-11 rounded-xl border border-border/70"
+              aria-label="Toggle color theme"
             >
               <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t">
-            <div className="container px-4 md:px-8">
-              <nav className="mx-auto max-w-2xl flex flex-col gap-4 py-4">
+          {mobileMenuOpen && (
+            <div
+              id="mobile-navigation"
+              className="mb-3 rounded-xl border border-border/70 bg-background p-2 shadow-lg md:hidden"
+            >
+              <nav className="flex flex-col gap-1">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
-                      "text-base font-medium transition-colors hover:text-foreground",
+                      "flex min-h-11 items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent hover:text-foreground",
                       pathname === item.href
-                        ? "text-foreground"
+                        ? "bg-muted text-foreground"
                         : "text-muted-foreground",
                     )}
                   >
@@ -115,48 +120,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 ))}
               </nav>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </header>
 
       <main className="flex-1 container px-4 md:px-8 pt-4 md:pt-6">
         {children}
       </main>
 
-      <footer className="border-t mt-8">
-        <div className="container px-4 md:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Keven Hernandez. All rights
-              reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link
-                href="mailto:hkeven89@gmail.com"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Email
-              </Link>
-              <Link
-                href="https://github.com/aerov8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                GitHub
-              </Link>
-              <Link
-                href="https://linkedin.com/in/eskevv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                LinkedIn
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

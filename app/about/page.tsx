@@ -12,11 +12,11 @@ export default function AboutPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight md:text-5xl mb-4">
+      <div className="mb-8">
+        <h1 className="mb-3 text-3xl font-bold tracking-tight md:text-5xl">
           About Me
         </h1>
-        <div className="space-y-3 text-sm md:text-base text-foreground/80 leading-relaxed">
+        <div className="space-y-2 text-sm leading-relaxed text-foreground/80 md:text-base">
           <p>
             I&apos;m a software engineer located in the US 🇺🇸. I enjoy working
             with scalable systems and involving math whenever I can in my
@@ -35,11 +35,11 @@ export default function AboutPage() {
       </div>
 
       {/* Experience Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl mb-4">
+      <section className="mb-8">
+        <h2 className="relative mb-3 inline-block pb-2 text-2xl font-bold tracking-tight after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-2/3 after:bg-primary md:text-3xl">
           Experience
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-3">
           {experience.map((exp) => (
             <Card key={exp.id}>
               <CardHeader>
@@ -50,6 +50,9 @@ export default function AboutPage() {
                     </CardTitle>
                     <p className="text-muted-foreground font-medium">
                       {exp.company}
+                      {"location" in exp && exp.location
+                        ? ` • ${exp.location}`
+                        : ""}
                     </p>
                   </div>
                   <div className="text-right">
@@ -94,8 +97,8 @@ export default function AboutPage() {
       </section>
 
       {/* Skills Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl mb-4">
+      <section className="mb-8">
+        <h2 className="relative mb-3 inline-block pb-2 text-2xl font-bold tracking-tight after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-2/3 after:bg-primary md:text-3xl">
           Skills
         </h2>
         <Card>
@@ -219,35 +222,35 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl mb-4">
+      <section className="mb-8">
+        <h2 className="relative mb-3 inline-block pb-2 text-2xl font-bold tracking-tight after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-2/3 after:bg-primary md:text-3xl">
           Achievements
         </h2>
-        <div className="space-y-4">
-          <div className="rounded-lg bg-accent p-6 border border-border">
-            <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-              <span>🏆</span> Technical
-            </h3>
-            <ul className="space-y-2">
-              {achievements.technical.map((achievement, idx) => (
-                <li key={idx} className="text-sm text-muted-foreground">
-                  {achievement}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-lg bg-accent p-6 border border-border">
-            <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-              <span>🎖️</span> Military
-            </h3>
-            <ul className="space-y-2">
-              {achievements.military.map((achievement, idx) => (
-                <li key={idx} className="text-sm text-muted-foreground">
-                  {achievement}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            { title: "Technical", items: achievements.technical },
+            { title: "Military", items: achievements.military },
+          ].map((category) => (
+            <Card key={category.title} className="h-full">
+              <CardHeader className="border-b border-border pb-4">
+                <CardTitle className="text-base font-semibold uppercase tracking-wider">
+                  {category.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-5">
+                <ul className="space-y-4">
+                  {category.items.map((achievement, idx) => (
+                    <li
+                      key={idx}
+                      className="border-l-2 border-primary/40 pl-4 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
     </div>

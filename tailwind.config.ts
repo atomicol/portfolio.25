@@ -7,6 +7,7 @@ const config: Config = {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./content/**/*.{md,mdx}",
 	],
 	prefix: "",
 	theme: {
@@ -79,7 +80,10 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography"),
+	],
 };
 
 export default config;

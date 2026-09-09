@@ -120,8 +120,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-4">
           {posts
-            .filter((post) => post.featured)
-            .slice(0, 3)
+            .slice(0, 2)
             .map((post) => (
               <Link
                 key={post.slug}

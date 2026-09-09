@@ -23,8 +23,8 @@
         "username": "eskevv"
       },
       "github": {
-        "url": "https://github.com/nandsoar/",
-        "username": "nandsoar"
+        "url": "https://github.com/atomicol",
+        "username": "atomicol"
       },
       "linkedin": {
         "url": "https://www.linkedin.com/in/eskevv/",
@@ -34,17 +34,39 @@
   },
   "experience": [
     {
+      "id": "hernandez-medical",
+      "company": "Hernandez Medical PLLC.",
+      "location": "Vestal, NY",
+      "position": "IT Administrator",
+      "startDate": "2026-04",
+      "endDate": "Present",
+      "duration": "Apr 2026 - Present",
+      "description": [
+        "Develop and maintain web applications used by the doctor.",
+        "Research and extend on all technologies used by the company.",
+        "Manage user accounts across the company's cloud workspace.",
+        "Gain business insights and oversee the billing and history of company data."
+      ],
+      "technologies": [
+        "Cloud Administration",
+        "Web Applications",
+        "Data Management",
+        "Billing Systems"
+      ],
+      "current": true
+    },
+    {
       "id": "ia-pharmacy",
       "company": "iA Pharmacy Fulfillment",
       "position": "Software Engineer",
       "startDate": "2025-01",
       "endDate": "Present",
-      "duration": "Jan 2025 - Present",
+      "duration": "Jan 2025 - Apr 2026",
       "description": [
-        "Developed software with C# that ran high-volume pharmaceutical workflows for different clients such as Publix",
-        "Work with our fulfillment solutions test team to track down bugs related to various systems, and to ensure the workflow is accurate from order submission to shipment of Rxs from the facility",
-        "Unit test, regression test, and patch validate for numerous app servers to ensure they match and satisfy customer needs",
-        "Travel to central-fill locations to train staff on our NEXiA software and troubleshoot any errors while going live"
+        "Developed software with C# that ran high-volume pharmaceutical workflows for different clients such as Publix.",
+        "Work with our fulfillment solutions test team to track down bugs related to various systems, and to ensure the workflow is accurate from order submission to shipment of Rxs from the facility.",
+        "Unit test, regression test, and patch validate for numerous app servers to ensure they match and satisfy customer needs.",
+        "Travel to central-fill locations to train staff on our NEXiA software and troubleshoot any errors while going live."
       ],
       "technologies": [
         "C#",
@@ -63,9 +85,9 @@
       "endDate": "Present",
       "duration": "Oct 2024 - Present",
       "description": [
-        "Troubleshot mission critical avionic systems",
-        "Interpreted schematics to diagnose electrical faults",
-        "Performed wire replacements and repairs"
+        "Troubleshot mission critical avionic systems.",
+        "Interpreted schematics to diagnose electrical faults.",
+        "Performed wire replacements and repairs."
       ],
       "technologies": [
         "Electronics",
@@ -79,10 +101,10 @@
   ],
   "skills": {
     "languages": [
-      { "name": "Go", "level": 4 },
+      { "name": "C++", "level": 4 },
       { "name": "C#", "level": 4 },
-      { "name": "Swift", "level": 3 },
-      { "name": "TypeScript", "level": 4 },
+      { "name": "Go", "level": 3 },
+      { "name": "TypeScript", "level": 3 },
       { "name": "Bash", "level": 3 }
     ],
     "web": [
@@ -91,18 +113,16 @@
       { "name": "React", "level": 4 }
     ],
     "databases": [
+      { "name": "SQLite", "level": 4 },
       { "name": "MySQL", "level": 4 },
       { "name": "PostgreSQL", "level": 3 }
     ],
     "tools": [
       { "name": "Git", "level": 5 },
-      { "name": "Docker", "level": 3 },
-      { "name": "Linux", "level": 4 }
+      { "name": "Linux", "level": 4 },
+      { "name": "Docker", "level": 3 }
     ],
-    "concepts": [
-      { "name": "DSA", "level": 4 },
-      { "name": "Linear Algebra", "level": 3 }
-    ]
+    "concepts": []
   },
   "education": [
     {
@@ -114,7 +134,8 @@
         "Data Structures & Algorithms",
         "Databases/SQL",
         "Operating Systems",
-        "Software Architecture & Design"
+        "Software Architecture & Design",
+        "Object Oriented Programming"
       ]
     },
     {
@@ -133,7 +154,7 @@
       "technologies": ["Go", "PostgreSQL", "Redis", "REST API"],
       "category": "Systems",
       "status": "completed",
-      "githubUrl": "https://github.com/aerov8/distributed-tasks"
+      "githubUrl": "https://github.com/atomicol/distributed-tasks"
     },
     {
       "id": "fabric-nums",
@@ -142,7 +163,7 @@
       "technologies": ["Go", "CLI", "Data Management"],
       "category": "Tools",
       "status": "completed",
-      "githubUrl": "https://github.com/aerov8/fabric_nums"
+      "githubUrl": "https://github.com/atomicol/fabric_nums"
     },
     {
       "id": "opengl-testbed",
@@ -151,7 +172,7 @@
       "technologies": ["C++", "OpenGL", "GLSL", "CMake", "ImGui"],
       "category": "Graphics",
       "status": "completed",
-      "githubUrl": "https://github.com/aerov8/3d-opengl-testbed"
+      "githubUrl": "https://github.com/atomicol/3d-opengl-testbed"
     },
     {
       "id": "lla-to-ecef",
@@ -160,11 +181,11 @@
       "technologies": ["Python", "Geospatial", "Mathematics"],
       "category": "Tools",
       "status": "completed",
-      "githubUrl": "https://github.com/aerov8/lla-to-ecef"
+      "githubUrl": "https://github.com/atomicol/lla-to-ecef"
     }
   ],
   "achievements": {
-    "technical": ["CompTIA ITF+ Certified", "Physics Engines"],
+    "technical": ["CompTIA ITF+ Certified" ],
     "military": [
       "B. CO. 1-222 AVN REGT Honor Graduate",
       "Best Warrior Award",

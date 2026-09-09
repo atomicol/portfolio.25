@@ -1,0 +1,42 @@
+---
+title: "Styding Logic Gates"
+date: "2026-09-09"
+excerpt: "How I understood electronics, logic gates, and a little of computer architecture"
+tags: ["Electronics", "Digital Logic", "Computer Architecture"]
+featured: false
+readTime: "4 min read"
+---
+
+My recent interest in electricity sparked the motivation I had at one point set aside for the longest time in my life when I only cared about the code inside of a computer. I decided to finally study electronics because I wanted to understand computers below the level of programming languages and APIs. I wanted to know how a physical system turns the movement of these electrons.
+
+To follow that question from the ground up, I took Pikuma's [Digital Electronics & Computer Architecture course](https://pikuma.com/courses/digital-electronics-computer-architecture) and read Charles Petzold's [*Code: The Hidden Language of Computer Hardware and Software*, 2nd edition](https://www.charlespetzold.com/code/). I also worked through [*The Elements of Computing Systems*](https://www.nand2tetris.org/), along with its course projects, also known as Nand2Tetris. Here is what I learned so far in my continuous journey to understand what makes a computer actually tick.
+
+## Blowing off the dust
+
+I dove through dozens of encyclopedias sitting at home that I hadn't touched in years looking for information on electronics. This led me to pages on atoms and electrons, wave signals, the invisible phtons that attract and repel electrons. It was an overload of information and something I was not able to read in one sitting of course but it was all more fascinating to me than it had ever been before. I finally  decided to pick up my Elegoo starter kit one more time that was just sitting in my drawer after experimenting with it a couple of years ago and looked up projects that I can build with it. When I dug through the components I felt like I could finally make sense of what all the circuitry was about for the first time and why these things feel so complex at times. I finally started to implement resistors, capacitors, stacking batteries, and just trying out different configurations with LED lights to see where there was current. I learned about transistors and immediately took the only two that came with the kit and started to make logic out of them. I experimented with several layouts until I felt the need to learn some more math and truly understand what voltage is alongside the many formulas it is used in to figure out circuit design and limitations. 
+
+All of this sudden insight led me to enroll in some online courses that aided my journey in understanding more of what intrigued me: the composition of logic gates. I had alredy known about logic gates and boolean artithmetic from my computer science background but it was never the programmers job to understand how they fit inside of a circuit, let alone design one. This is exactly what led me to research further and go down more rabbit holes as i experimented with all sorts of simulators and read about optimizing them. It was exciting and something that motivated me for the second part of the 'Elements of Computer Systems', where i actually put together a basic Operating System. 
+
+Here are some key ideas i took away from from these courses:
+
+## From electricity to switching
+
+Pikuma's course starts closer to the physical world than most computer architecture material. It covers atoms, electrons, conductors and insulators, current, voltage, resistance, electric fields, and the difference between electron flow and conventional current. From there, it introduces components such as resistors, capacitors, diodes, relays, and transistors.
+
+One useful idea is that a digital signal is still an electrical signal. A computer interprets ranges of voltage as logical values, but the underlying system is physical. A transistor can act as a controlled switch: one signal determines whether another path is open or closed. With enough switches working together, simple electrical behavior becomes logic.
+
+## Why logic gates matter
+
+Logic gates are where the connection between electronics and computation becomes clear. An **AND** gate only produces a high output when both inputs are high. An **OR** gate responds when either input is high, and so one. If you calcualte all of the possible combinations it turns out to be 16 different types, where some are actually considered useless while others are actually a lot more useful than one might think at first glance. Take the buffer gate for example. The buffer takes in a signal- a 1 or a 0 and just repeats it. This may seem useless but it's actually very useful in amplifying a poor signal and making sure it is not lost. These small rules can be represented with truth tables, but they can also be built from relays or transistors.
+
+The most important gate in this progression is **NAND**, a gate that the book emphasized the importance of and what the entire course is based on. NAND is functionally complete, meaning that NOT, AND, and OR can all be constructed from NAND gates alone. That makes it possible to describe an entire digital system using one primitive operation. Combining gates leads to multiplexers, adders, latches, registers, memory, and an arithmetic logic unit.
+
+Petzold's *Code* made this progression especially intuitive. Its examples connect batteries, switches, telegraphs, relays, codes, and Boolean logic before building toward clocks, gates, memory, CPU control signals, registers, buses, and an ALU. The physical details make the abstractions feel less magical: a processor is ultimately coordinating many controlled paths for electrical signals.
+
+## Building the computer
+
+The Nand2Tetris course takes the logic-gate idea and turns it into a construction project. Starting with NAND, the projects build Boolean chips, arithmetic circuits, memory, a CPU, and the Hack computer. The second half continues upward into machine language, an assembler, a virtual machine, a compiler, and an operating system.
+
+Nand2Tetris intentionally begins at the digital abstraction level rather than teaching semiconductor physics. That made it a useful complement to Pikuma and *Code*: Pikuma helped explain the physical components and signals, *Code* connected those ideas through the history of computing, and Nand2Tetris provided a systematic way to implement the abstractions. All three of these materials provided a solid foundation for me to implement in my future projects.
+
+The biggest lesson for me is that software begins with physical behavior that can be controlled, represented, combined, and remembered. Electrons and fields become signals. The signals go through switches, which then turn into  countless configurations of logic gates. These logic gates are the structure that executes a program and the code that I have been writing to solve problems.
