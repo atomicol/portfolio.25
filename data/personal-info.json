@@ -101,26 +101,68 @@
   ],
   "skills": {
     "languages": [
-      { "name": "C++", "level": 4 },
-      { "name": "C#", "level": 4 },
-      { "name": "Go", "level": 3 },
-      { "name": "TypeScript", "level": 3 },
-      { "name": "Bash", "level": 3 }
+      {
+        "name": "C++",
+        "level": 4
+      },
+      {
+        "name": "C#",
+        "level": 4
+      },
+      {
+        "name": "Go",
+        "level": 3
+      },
+      {
+        "name": "TypeScript",
+        "level": 3
+      },
+      {
+        "name": "Bash",
+        "level": 3
+      }
     ],
     "web": [
-      { "name": "HTML5", "level": 5 },
-      { "name": "CSS3", "level": 4 },
-      { "name": "React", "level": 4 }
+      {
+        "name": "HTML5",
+        "level": 5
+      },
+      {
+        "name": "CSS3",
+        "level": 4
+      },
+      {
+        "name": "React",
+        "level": 4
+      }
     ],
     "databases": [
-      { "name": "SQLite", "level": 4 },
-      { "name": "MySQL", "level": 4 },
-      { "name": "PostgreSQL", "level": 3 }
+      {
+        "name": "SQLite",
+        "level": 4
+      },
+      {
+        "name": "MySQL",
+        "level": 4
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 3
+      }
     ],
     "tools": [
-      { "name": "Git", "level": 5 },
-      { "name": "Linux", "level": 4 },
-      { "name": "Docker", "level": 3 }
+      {
+        "name": "Git",
+        "level": 5
+      },
+      {
+        "name": "Linux",
+        "level": 4
+      },
+      {
+        "name": "Docker",
+        "level": 3
+      }
     ],
     "concepts": []
   },
@@ -143,7 +185,11 @@
       "institution": "1-222 AVN Regiment",
       "degree": "Avionics Mechanic Certification",
       "completed": "2024",
-      "coursework": ["Troubleshooting", "Soldering", "Interpret Schematics"]
+      "coursework": [
+        "Troubleshooting",
+        "Soldering",
+        "Interpret Schematics"
+      ]
     }
   ],
   "projects": [
@@ -151,7 +197,12 @@
       "id": "distributed-tasks",
       "title": "Distributed Task Processing System",
       "description": "A scalable, production-ready distributed task processing system built with Go",
-      "technologies": ["Go", "PostgreSQL", "Redis", "REST API"],
+      "technologies": [
+        "Go",
+        "PostgreSQL",
+        "Redis",
+        "REST API"
+      ],
       "category": "Systems",
       "status": "completed",
       "githubUrl": "https://github.com/atomicol/distributed-tasks"
@@ -160,7 +211,11 @@
       "id": "fabric-nums",
       "title": "Fabric Nums",
       "description": "Scientific and programmer visual calculator - Command Line w/ Rust",
-      "technologies": ["Go", "CLI", "Data Management"],
+      "technologies": [
+        "Go",
+        "CLI",
+        "Data Management"
+      ],
       "category": "Tools",
       "status": "completed",
       "githubUrl": "https://github.com/atomicol/fabric_nums"
@@ -169,7 +224,13 @@
       "id": "opengl-testbed",
       "title": "3D OpenGL Rendering Engine",
       "description": "An OpenGL rendering experiment using modern OpenGL 3.3+",
-      "technologies": ["C++", "OpenGL", "GLSL", "CMake", "ImGui"],
+      "technologies": [
+        "C++",
+        "OpenGL",
+        "GLSL",
+        "CMake",
+        "ImGui"
+      ],
       "category": "Graphics",
       "status": "completed",
       "githubUrl": "https://github.com/atomicol/3d-opengl-testbed"
@@ -178,14 +239,20 @@
       "id": "lla-to-ecef",
       "title": "LLA to ECEF Converter",
       "description": "A coordinate conversion tool to get Earth-Centered, Earth-Fixed (ECEF) Cartesian coordinates from LLA coordinates.",
-      "technologies": ["Python", "Geospatial", "Mathematics"],
+      "technologies": [
+        "Python",
+        "Geospatial",
+        "Mathematics"
+      ],
       "category": "Tools",
       "status": "completed",
       "githubUrl": "https://github.com/atomicol/lla-to-ecef"
     }
   ],
   "achievements": {
-    "technical": ["CompTIA ITF+ Certified" ],
+    "technical": [
+      "CompTIA ITF+ Certified"
+    ],
     "military": [
       "B. CO. 1-222 AVN REGT Honor Graduate",
       "Best Warrior Award",
@@ -198,7 +265,11 @@
   "availability": {
     "status": "available",
     "message": "Available for new opportunities",
-    "openTo": ["full-time", "contract", "interesting-projects"]
+    "openTo": [
+      "full-time",
+      "contract",
+      "interesting-projects"
+    ]
   },
   "meta": {
     "lastUpdated": "2025-01-13",

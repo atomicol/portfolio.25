@@ -49,7 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col">
       <header
         className={cn(
-          "navbar sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70",
+          "navbar sticky top-0 z-50 w-full border-b border-border/60 bg-background",
           isScrollingDown && "navbar-hidden",
         )}
       >
